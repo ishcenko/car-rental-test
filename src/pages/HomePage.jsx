@@ -1,9 +1,9 @@
-import { Wrapper, Title, Text, Image, Button } from './HomePage.styled';
+import { Wrapper, Title, Text, Button } from './HomePage.styled';
 
-import hamer from '../image/HomeImg/hamer.jpg';
-import hamer2xhome from '../image/HomeImg/hamer2xhome.jpg';
-import hamer3xhome from '../image/HomeImg/hamer3xhome.jpg';
-import hamer4xhome from '../image/HomeImg/hamer4xhome.jpg';
+// import hamer from '../image/HomeImg/hamer.jpg';
+// import hamer2xhome from '../image/HomeImg/hamer2xhome.jpg';
+// import hamer3xhome from '../image/HomeImg/hamer3xhome.jpg';
+// import hamer4xhome from '../image/HomeImg/hamer4xhome.jpg';
 
 export default function Home() {
   return (
@@ -34,15 +34,14 @@ export default function Home() {
         with or without a driver in Kryvyi Rih on the best terms for comfortable
         movement around the city and its surroundings.
       </Text>
-      <Image>
-        <picture>
-          <source
-            srcSet={`${hamer} 1x, ${hamer2xhome} 2x, ${hamer3xhome} 3x, ${hamer4xhome} 4x`}
-            type="image/jpg"
-          />
-        </picture>
-      </Image>
-      <Button></Button>
+      {/* <Image>
+        <img
+          src={hamer} // Виберіть відповідну версію фото
+          srcSet={`${hamer} 1x, ${hamer2xhome} 2x, ${hamer3xhome} 3x, ${hamer4xhome} 4x`}
+          alt="Car Rental"
+        />
+      </Image> */}
+      <Button to={'/catalog'}>go to catalog</Button>
     </Wrapper>
   );
 }

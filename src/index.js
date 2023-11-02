@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <Provider> */}
-    <BrowserRouter basename="/react-homework-template">
+    <BrowserRouter basename="/car-rental-test">
       {/* <PersistGate> */}
       <App />
       {/* </PersistGate> */}
