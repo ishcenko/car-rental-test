@@ -12,7 +12,7 @@ export const Title = styled.h1`
 `;
 
 export const Text = styled.p`
-  display: block;
+  display: flex;
   color: #000;
   font-size: 16px;
 `;
