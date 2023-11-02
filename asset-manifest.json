@@ -1,13 +1,19 @@
 {
   "files": {
     "main.css": "/car-rental-test/static/css/main.7acaea2f.css",
-    "main.js": "/car-rental-test/static/js/main.07d3183d.js",
+    "main.js": "/car-rental-test/static/js/main.a3d2c54e.js",
+    "static/js/906.930c679f.chunk.js": "/car-rental-test/static/js/906.930c679f.chunk.js",
+    "static/media/hamer4xhome.jpg": "/car-rental-test/static/media/hamer4xhome.c0fe602f853606bf282a.jpg",
+    "static/media/hamer3xhome.jpg": "/car-rental-test/static/media/hamer3xhome.d580f04292cc7410daac.jpg",
+    "static/media/hamer2xhome.jpg": "/car-rental-test/static/media/hamer2xhome.82fcc00864c518f95280.jpg",
+    "static/media/hamer.jpg": "/car-rental-test/static/media/hamer.462009239aa5d4b3165e.jpg",
     "index.html": "/car-rental-test/index.html",
     "main.7acaea2f.css.map": "/car-rental-test/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/car-rental-test/static/js/main.07d3183d.js.map"
+    "main.a3d2c54e.js.map": "/car-rental-test/static/js/main.a3d2c54e.js.map",
+    "906.930c679f.chunk.js.map": "/car-rental-test/static/js/906.930c679f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/js/main.a3d2c54e.js"
   ]
 }
