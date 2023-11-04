@@ -1,18 +1,18 @@
 import { useState } from 'react';
-import Hearts from 'components/Hearts/Hearts';
+import Button from 'components/Button/Button';
 import {
   Wrapper,
-  ImageWrappper,
-  Img,
-  WrapperTitle,
+  ImageWrap,
+  Image,
+  TitleWrap,
   Title,
   Span,
-  TextTitle,
+  Text,
   List,
   Item,
 } from './CarItem.styled';
-import Modal from 'components/Modal/Modal';
-import Button from 'components/Button/Button';
+import HeartIcon from 'components/Hearts/Hearts';
+import BasicModal from 'components/Modal/Modal';
 
 export default function CarItem({ data }) {
   const [open, setOpen] = useState(false);
@@ -21,28 +21,28 @@ export default function CarItem({ data }) {
 
   return (
     <Wrapper>
-      <ImageWrappper>
-        <Hearts data={data} />
-        <Img src={data.img} alt="Photo Car" />
-      </ImageWrappper>
-      <WrapperTitle>
+      <ImageWrap>
+        <HeartIcon data={data} />
+        <Image src={data.img} alt="Car" />
+      </ImageWrap>
+      <TitleWrap>
         <Title>
           {data.make} {''}
           <Span>{data.model}</Span>, {data.year}
         </Title>
-        <TextTitle>{data.rentalPrice}</TextTitle>
-      </WrapperTitle>
+        <Text> {data.rentalPrice}</Text>
+      </TitleWrap>
       <List>
-        <Item> {data.address.split(',')[1]} </Item>
-        <Item> {data.address.split(',')[2]} </Item>
-        <Item> {data.rentalCompany} </Item>
-        <Item> {data.type} </Item>
-        <Item> {data.model} </Item>
-        <Item> {data.mileage} </Item>
-        <Item> {data.accessories[0]} </Item>
+        <Item>{data.address.split(',')[1]}</Item>
+        <Item>{data.address.split(',')[2]}</Item>
+        <Item>{data.rentalCompany}</Item>
+        <Item>{data.type}</Item>
+        <Item>{data.model}</Item>
+        <Item>{data.mileage}</Item>
+        <Item>{data.accessories[0]}</Item>
       </List>
-      <Button onClick={handleOpen} text="Leart more" width="274px" />
-      {open && <Modal open={open} onClose={handleClose} data={data} />}
+      <Button onClick={handleOpen} text="Learn more" width="274px" />
+      {open && <BasicModal open={open} onClose={handleClose} data={data} />}
     </Wrapper>
   );
 }

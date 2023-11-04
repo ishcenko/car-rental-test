@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   padding: 34px;
 `;
 
-export const CloseModal = styled.button`
+export const CloseIcon = styled.button`
   position: absolute;
   background-color: transparent;
   border: none;
@@ -14,12 +14,13 @@ export const CloseModal = styled.button`
   cursor: pointer;
 `;
 
-export const Icon = styled.img`
+export const IconX = styled.img`
   width: 30px;
   height: 30px;
+  z-index: 55;
 `;
 
-export const ImageCar = styled.img`
+export const Image = styled.img`
   width: 100%;
   height: 314px;
   display: block;
@@ -27,7 +28,7 @@ export const ImageCar = styled.img`
   border-radius: 14px;
 `;
 
-export const Wrapp = styled.div`
+export const Wrap = styled.div`
   margin-top: 14px;
   margin-bottom: 24px;
 `;

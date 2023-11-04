@@ -12,10 +12,10 @@ import {
 } from 'redux-persist';
 
 import favoritesReducer from './slice';
-import { carApi } from './operation';
+import { carsApi } from './operation';
 
 const reducers = combineReducers({
-  [carApi.reducerPath]: carApi.reducer,
+  [carsApi.reducerPath]: carsApi.reducer,
   favorites: favoritesReducer,
 });
 
@@ -35,7 +35,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(carApi.middleware),
+    }).concat(carsApi.middleware),
 });
 
 export let persistor = persistStore(store);

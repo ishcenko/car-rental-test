@@ -11,7 +11,7 @@ export const Header = styled.header`
   background-color: #f3f3f2;
 `;
 
-export const Navigation = styled.nav`
+export const Nav = styled.nav`
   display: flex;
   gap: 100px;
 `;

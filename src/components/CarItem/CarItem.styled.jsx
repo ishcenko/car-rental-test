@@ -8,21 +8,21 @@ export const Wrapper = styled.li`
   align-items: flex-start;
 `;
 
-export const ImageWrappper = styled.div`
+export const ImageWrap = styled.div`
   position: relative;
   width: 274px;
   height: 268px;
   margin-bottom: 14px;
 `;
 
-export const Img = styled.img`
+export const Image = styled.img`
   width: 100%;
   height: 268px;
   object-fit: cover;
   border-radius: 14px;
 `;
 
-export const WrapperTitle = styled.div`
+export const TitleWrap = styled.div`
   width: 274px;
   align-items: center;
   color: #121417;
@@ -45,7 +45,7 @@ export const Span = styled.span`
   line-height: 1.5;
 `;
 
-export const TextTitle = styled.p`
+export const Text = styled.p`
   color: #121417;
   font-size: 16px;
   font-weight: 500;

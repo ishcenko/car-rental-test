@@ -1,13 +1,13 @@
-import Button from 'components/Button/Button';
-import Close from '../../image/HomeImg/close-icon.svg';
-import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Close from '../../image/HomeImg/close-icon.svg';
+import Button from 'components/Button/Button';
 import {
   Wrapper,
-  CloseModal,
-  Icon,
-  Wrapp,
-  ImageCar,
+  CloseIcon,
+  IconX,
+  Wrap,
+  Image,
   TextWrap,
   Title,
   Span,
@@ -15,10 +15,11 @@ import {
   Item,
   Description,
   Info,
-  ConditionList,
   ConditionItem,
+  ConditionList,
   ConditionSpan,
 } from './Modal.styled';
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -26,20 +27,27 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 541,
   maxHeight: 830,
+  bgcolor: 'background.paper',
   borderRadius: 6,
   boxShadow: 24,
 };
-export default function ModalCar({ open, onClose, data }) {
+
+export default function BasicModal({ open, onClose, data }) {
   return (
     <div>
-      <Modal open={open} onClose={onClose}>
+      <Modal
+        open={open}
+        onClose={onClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
         <Box sx={style}>
           <Wrapper>
-            <CloseModal>
-              <Icon src={Close} alt="Close modal" />
-            </CloseModal>
-            <ImageCar src={data.imd} alt={data.make} width="461" height="248" />
-            <Wrapp>
+            <CloseIcon onClick={onClose}>
+              <IconX src={Close} alt="Close button" />
+            </CloseIcon>
+            <Image src={data.img} alt={data.make} width="461" height="248" />
+            <Wrap>
               <TextWrap>
                 <Title>
                   {data.make} <Span>{data.model}, </Span>
@@ -93,7 +101,7 @@ export default function ModalCar({ open, onClose, data }) {
                   Price: <ConditionSpan>{data.rentalPrice}</ConditionSpan>
                 </ConditionItem>
               </ConditionList>
-            </Wrapp>
+            </Wrap>
             <Button
               text="Rental car"
               width="168px"

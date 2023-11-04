@@ -1,28 +1,33 @@
-import { useDispatch, useSelector } from 'react-redux';
 import Checkbox from '@mui/material/Checkbox';
-import { WrapperHearts, ColorHearts, HeartsStroke } from './Hearts.styled';
-import { addFavorit, removeFavorit } from 'redux/slice';
-import { selectorFavorit } from 'redux/selectors';
+import { HeartFill, HeartStroke, HeartWrap } from './Hearts.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavorites } from 'redux/selectors';
+import { addFavorite, removeFavorite } from 'redux/slice';
 
-export default function Hearts({ data }) {
+export default function HeartIcon({ data }) {
   const dispatch = useDispatch();
-  const favoritCars = useSelector(selectorFavorit);
-  const isChecked = favoritCars.favorit.some(({ id }) => id === data.id);
-  const handleToggeleFavorit = () => {
+
+  const favoriteCars = useSelector(selectFavorites);
+
+  const isChecked =
+    favoriteCars && favoriteCars.favorites
+      ? favoriteCars.favorites.some(({ id }) => id === data.id)
+      : false;
+  const handleToggleFavorite = () => {
     if (isChecked) {
-      dispatch(removeFavorit(data));
+      dispatch(removeFavorite(data));
     } else {
-      dispatch(addFavorit(data));
+      dispatch(addFavorite(data));
     }
   };
-
   return (
-    <WrapperHearts>
+    <HeartWrap>
       <Checkbox
-        icon={<HeartsStroke />}
-        checkedIcon={<ColorHearts />}
-        onChange={handleToggeleFavorit}
+        icon={<HeartStroke />}
+        checkedIcon={<HeartFill />}
+        checked={isChecked}
+        onChange={handleToggleFavorite}
       />
-    </WrapperHearts>
+    </HeartWrap>
   );
 }

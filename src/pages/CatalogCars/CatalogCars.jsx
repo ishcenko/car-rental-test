@@ -1,18 +1,29 @@
 import { useState, useEffect } from 'react';
+import CarItem from 'components/CarItem/CarItem';
+import { WrapperFilter, WrapperList, LoadMore } from './CatalogCars.styled';
+import Filter from 'components/Filter/Filter';
+
+import {
+  useGetAdvertsQuery,
+  useGetCarsByPageQuery,
+} from '../../redux/operation';
 import { Loader } from 'components/Loader/Loader';
 import NavBar from 'components/NavBar/NavBar';
-import CarItem from 'components/CarItem/CarItem';
-import { WrapperList, LoadMore } from './CatalogCars.styled';
-import {
-  useGetCarsByPageQuery,
-  useGetAdvertsQuery,
-} from '../../redux/operation';
 
-export default function CatalogCars() {
+export default function Catalog() {
   const [page, setPage] = useState(1);
   const [allCars, setAllCars] = useState([]);
   const { data, error, isLoading, isFetching } = useGetCarsByPageQuery(page);
   const { data: allAdverts } = useGetAdvertsQuery();
+
+  const [filters, setFilters] = useState({
+    make: '',
+    filteredPrices: [],
+    minMileage: '',
+    maxMileage: '',
+  });
+  const [filteredAdverts, setFilteredAdverts] = useState(null);
+  const [isFiltering, setIsFiltering] = useState(false);
 
   const loadMore = () => {
     setPage(page + 1);
@@ -24,20 +35,91 @@ export default function CatalogCars() {
     }
   }, [data]);
 
+  useEffect(() => {
+    if (isFiltering) {
+      if (
+        filters.make ||
+        filters.filteredPrices.length > 0 ||
+        filters.minMileage ||
+        filters.maxMileage
+      ) {
+        const filteredAdverts = allAdverts.filter(advert => {
+          if (filters.make && advert.make !== filters.make.value) {
+            return false;
+          }
+          if (
+            filters.filteredPrices.length > 0 &&
+            !filters.filteredPrices.some(
+              priceObj => priceObj.value === advert.rentalPrice.replace('$', '')
+            )
+          ) {
+            return false;
+          }
+          if (filters.minMileage && advert.mileage < filters.minMileage) {
+            return false;
+          }
+          if (filters.maxMileage && advert.mileage > filters.maxMileage) {
+            return false;
+          }
+          return true;
+        });
+
+        setFilteredAdverts(filteredAdverts);
+      } else {
+        setFilteredAdverts([]);
+      }
+    }
+  }, [filters, allAdverts, isFiltering]);
+
+  const makes = allAdverts
+    ? [...new Set(allAdverts.map(advert => advert.make))]
+    : [];
+  const prices = allAdverts
+    ? [
+        ...new Set(
+          allAdverts.map(advert => advert.rentalPrice.replace('$', ''))
+        ),
+      ]
+    : [];
+  const mileage = allAdverts
+    ? [...new Set(allAdverts.map(advert => advert.mileage))]
+    : [];
+  const minMileage = Math.min(...mileage);
+  const maxMileage = Math.max(...mileage);
+
   return (
     <>
       <NavBar />
+      <WrapperFilter>
+        <Filter
+          makes={makes}
+          prices={prices}
+          minMileage={minMileage}
+          maxMileage={maxMileage}
+          onFilterChange={newFilters => {
+            setFilters(newFilters);
+            setIsFiltering(true);
+          }}
+          filters={filters}
+        />
+      </WrapperFilter>
       <WrapperList>
-        {isFetching ? (
-          allAdverts.map((car, index) => <CarItem key={index} data={car} />)
+        {isFiltering ? (
+          filteredAdverts !== null && filteredAdverts.length > 0 ? (
+            filteredAdverts.map((car, index) => (
+              <CarItem key={index} data={car} />
+            ))
+          ) : (
+            <div>No matches found based on the chosen criteria.</div>
+          )
         ) : error ? (
-          <>Oops, error</>
+          <>Oops, there was an error...</>
         ) : isLoading ? (
           <Loader />
         ) : allCars.length > 0 ? (
           allCars.map((car, index) => <CarItem key={index} data={car} />)
         ) : null}
-        {data && data.length >= 8 && (
+        {!isFiltering && data && data.length >= 12 && (
           <LoadMore variant="text" onClick={loadMore} disabled={isFetching}>
             Load more
           </LoadMore>
@@ -46,133 +128,3 @@ export default function CatalogCars() {
     </>
   );
 }
-
-// import { useState, useEffect } from 'react';
-// import { Loader } from 'components/Loader/Loader';
-// import NavBar from 'components/NavBar/NavBar';
-// import CarItem from 'components/CarItem/CarItem';
-// import Filter from 'components/Filter/Filter';
-// import { WrapperFiltered, WrapperList, LoadMore } from './CatalogCars.styled';
-// import {
-//   useGetAdvertsQuery,
-//   useGetCarsByPageQuery,
-// } from '../../redux/operation';
-
-// export default function CatalogCars() {
-//   const [page, setPage] = useState(1);
-//   const [allCars, setAllCars] = useState([]);
-//   const { data, error, isLoading, isFetching } = useGetCarsByPageQuery(page);
-//   const { data: allAdverts } = useGetAdvertsQuery();
-
-//   const [filter, setFilter] = useState({
-//     make: '',
-//     filterPrice: [],
-//     min: '',
-//     max: [],
-//   });
-//   const [filterAdverts, setFilterAdverts] = useState(null);
-//   const [isFilter, setIsFilter] = useState(false);
-
-//   const loadMore = () => {
-//     setPage(page + 1);
-//   };
-
-//   useEffect(() => {
-//     if (data) {
-//       setAllCars(prevCatalog => [...prevCatalog, ...data]);
-//     }
-//   }, [data]);
-
-//   useEffect(() => {
-//     if (isFetching) {
-//       if (
-//         filter.make ||
-//         filter.filterPrice.length > 0 ||
-//         filter.min ||
-//         filter.max
-//       ) {
-//         const filterAdverts = allAdverts.filter(adverts => {
-//           if (filter.make && adverts.make !== filter.make.value) {
-//             return false;
-//           }
-//           if (
-//             filter.filterPrice.length > 0 &&
-//             !filter.filterPrice.some(
-//               priceObj =>
-//                 priceObj.value === adverts.rentalPrice.replace('$', '')
-//             )
-//           ) {
-//             return false;
-//           }
-//           if (filter.min && adverts.run < filter.min) {
-//             return false;
-//           }
-//           if (filter.max && adverts.run > filter.max) {
-//             return false;
-//           }
-//           return true;
-//         });
-//         setFilterAdverts(filterAdverts);
-//       } else {
-//         setFilterAdverts([]);
-//       }
-//     }
-//   }, [filter, allAdverts, isFetching]);
-
-//   const makeSence = allAdverts
-//     ? [...new Set(allAdverts.map(adverts => adverts.make))]
-//     : [];
-//   const prices = allAdverts
-//     ? [
-//         ...new Set(
-//           allAdverts.map(adverts => adverts.rentalPrice.replace('$', ''))
-//         ),
-//       ]
-//     : [];
-//   const run = allAdverts
-//     ? [...new Set(allAdverts.map(adverts => adverts.run))]
-//     : [];
-//   const min = Math.min(...run);
-//   const max = Math.max(...run);
-
-//   return (
-//     <>
-//       <NavBar />
-//       <WrapperFiltered>
-//         <Filter
-//           makeSence={makeSence}
-//           prices={prices}
-//           min={min}
-//           max={max}
-//           onFilterChange={newFilters => {
-//             setFilter(newFilters);
-//             setIsFilter(true);
-//           }}
-//           filters={filter}
-//         />
-//       </WrapperFiltered>
-//       <WrapperList>
-//         {isFetching ? (
-//           filterAdverts !== null && filterAdverts.length > 0 ? (
-//             filterAdverts.map((car, index) => (
-//               <CarItem key={index} data={car} />
-//             ))
-//           ) : (
-//             <div>No matches found.</div>
-//           )
-//         ) : error ? (
-//           <>Oops, error</>
-//         ) : isLoading ? (
-//           <Loader />
-//         ) : allCars.length > 0 ? (
-//           allCars.map((car, index) => <CarItem key={index} data={car} />)
-//         ) : null}
-//         {!isFilter && data && data.length >= 8 && (
-//           <LoadMore variant="text" onClick={loadMore} disabled={isFetching}>
-//             Load more
-//           </LoadMore>
-//         )}
-//       </WrapperList>
-//     </>
-//   );
-// }
