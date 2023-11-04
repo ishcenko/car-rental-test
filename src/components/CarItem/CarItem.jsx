@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Hearts } from 'components/Hearts/Hearts';
+import Hearts from 'components/Hearts/Hearts';
 import {
   Wrapper,
   ImageWrappper,
