@@ -5,8 +5,8 @@ import styled from '@emotion/styled';
 
 export const HeartWrap = styled.div`
   position: absolute;
-  top: 10;
-  right: 10;
+  top: 0;
+  right: 0;
 `;
 
 export const HeartFill = muiStyled(Favorite)({
