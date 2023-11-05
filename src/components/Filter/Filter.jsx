@@ -26,7 +26,7 @@ export default function Filter({ makes, prices, onFilterChange }) {
   const makeOptions = makes.map(make => ({ value: make, label: make }));
 
   const priceRangeOptions = [];
-  for (let i = 30; i <= 500; i += 10) {
+  for (let i = 30; i <= 80; i += 10) {
     priceRangeOptions.push({ value: i, label: `${i}` });
   }
 
