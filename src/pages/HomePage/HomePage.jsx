@@ -80,7 +80,7 @@ export default function Home() {
 
       <Button to={'/catalog'}>go to catalog</Button>
       <TextKr>
-        `Кривий Ріг
+        `Кривий Ріг`
         <br />
         `місто довжиною в життя`
         <br />
