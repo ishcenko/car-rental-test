@@ -27,55 +27,55 @@ export default function Home() {
         possibilities and conditions of cooperation from the transport company
         "CAR-RENT". We will help you to arrange a daily or long-term car rental
         with or without a driver in Kryvyi Rih on the best terms for comfortable
-        movement around the city and its surroundings. На етапі підбору машини і
-        укладення договору оренди в компанії замовників, як правило, цікавить
-        ряд питань, а саме: Що включає послуга оренди авто? У вартість прокату
-        ТЗ входить: повністю готовий до експлуатації автомобіль (вимитий і
-        заправлений до повного бака). Також у вартість оренди включено повне
-        страхування «КАСКО» з франшизою. Які умови оренди авто і порядок його
-        оформлення Для оформлення договору прокату автомобіля без водія від
-        орендаря необхідно пред’явлення паспорта та ІПН, замовник при цьому
-        повинен бути не молодше 21 року, мати водійське посвідчення і мінімум 2
-        роки стажу водіння. Оренда ТЗ можлива із заставою і без нього. У другому
-        випадку вартість послуги буде вище. Для прокату автомобіля залишається
-        заявка на сайті компанії. В лагідні терміни менеджер зв’язується з
-        клієнтом для узгодження моделі машини і терміну оренди. Як отримати і як
-        віддати авто Після підбору, узгодження ТЗ і укладення договору машину
-        можна забрати (можлива доставка за адресою). Офіс компанії працює без
-        вихідних з 10.00 до 19.00 год. За невелику додаткову плату менеджери
-        CAR-RENT готові здати в прокат або прийняти назад автомобіль в будь-який
-        інший зручний для замовника час. Машина на прокат в Кривому Розі –
-        вигідну пропозицію Компанія «CAR-RENT», маючи серйозний досвід роботи,
-        відмінну ділову репутацію, солідний автопарк техніки, великий обсяг
-        здійснених угод, пропонує жителям і гостям Кривого Рогу скористатися
-        своїми послугами. Основна спеціалізація компанії – автопрокат.
-        Пропонуємо оренду нових, технічно повністю справних бюджетних і
-        представницьких авто на будь-який термін (від 1 дня). Для зручності
-        замовників підбираємо автомобіль з подачею в будь-яку точку України.
-        Наявні в розпорядженні компанії транспортні засоби попередньо пройшли
-        процедуру страхування, забезпечені необхідною для оренди та експлуатації
-        документацією. Подача і повернення машини можливі в будь-якій точці
-        Кривого Рогу та України в цілому. Наш автопарк включає зарубіжні
-        автомобілі різних класів, в тому числі: Економ (від 20 $ / добу)
-        Середній (від 29 $ / добу) Бізнес (від 40 $ / добу) Позашляховики (від
-        37 $ / добу) Хочете в Кривому Розі замовити машину в оренду?
-        Зателефонуйте нам або надішліть через сайт заявку на підбір машини
-        бажаного класу. Отримувані переваги при співпраці Оформляючи у нас
-        послугу з оренди ТЗ, кожен клієнт може розраховувати на ряд преференцій,
-        в тому числі: цілодобову підтримку, допомогу в підборі авто; при
-        необхідності прокат авто з досвідченим водієм; швидке укладення договору
-        оренди із заставою або без заставної суми (при пред’явленні мінімального
-        пакету документів); оперативну подачу ТЗ до місця призначення; технічну
-        допомогу на дорогах при виникненні поломок, інших форс-мажорних
-        ситуацій; недорогу оренду GPS-навігатора, дитячого крісла;
-        конфіденційність, безпеку угоди; обґрунтовані тарифи на послуги.
-        Цікавить недорога оренда авто, без застави, тяганини, утомливих
-        формальностей? Оформіть бронювання машини в нашій компанії. Ми
-        гарантуємо, що звернувшись за допомогою в CAR-RENT, Ви залишитеся
-        задоволені солідним автопарком компанії, технічним стан, доглянутим
-        виглядом орендованого автомобіля, нашими розцінками і серйозним підходом
-        співробітників фірми до роботи. Добова, довготривала оренда авто в
-        Кривому Розі від компанії «CAR-RENT» – Ваш грамотний вибір!
+        movement around the city and its surroundings. At the stage of selecting
+        a car and signing a lease agreement in the customer's company, several
+        questions are usually of interest, namely: What does the car rental
+        service include? The rental cost includes: a fully ready-to-use car
+        (cleaned and refueled to a full tank). The rental cost also includes
+        comprehensive "CASCO" insurance with a deductible. What are the terms of
+        car rental and the procedure for its registration? To sign a car rental
+        agreement without a driver, the lessee must present a passport and tax
+        identification number (TIN). The customer must also be at least 21 years
+        old, have a valid driver's license, and a minimum of 2 years of driving
+        experience. Car rental can be done with or without a security deposit.
+        In the latter case, the cost of the service will be higher. To rent a
+        car, you can submit a request on the company's website. In a reasonable
+        time, a manager will contact the customer to agree on the car model and
+        the rental period. How to pick up and return the car After selecting,
+        agreeing on the details, and signing the rental agreement, you can pick
+        up the car (delivery to the specified address is possible). The
+        company's office is open seven days a week from 10:00 AM to 7:00 PM. For
+        a small additional fee, CAR-RENT managers are ready to deliver or pick
+        up the car at any convenient time for the customer. Car rental in Kryvyi
+        Rih - a beneficial offer The company "CAR-RENT," with its extensive
+        experience, excellent business reputation, a solid fleet of vehicles,
+        and a significant number of completed agreements, offers its services to
+        the residents and guests of Kryvyi Rih. The company's main
+        specialization is car rental. We offer rental of new, technically sound
+        budget and executive cars for any duration (from 1 day). For the
+        convenience of customers, we select a car for delivery to any location
+        in Ukraine. The company's vehicles have been previously insured, and all
+        necessary documentation for rental and operation is provided. Pickup and
+        return of the car are possible at any point in Kryvyi Rih or Ukraine as
+        a whole. Our fleet includes foreign cars of various classes, including:
+        Economy (from $20 per day) Mid-size (from $29 per day) Business (from
+        $40 per day) SUVs (from $37 per day) Want to rent a car in Kryvyi Rih?
+        Call us or submit a car selection request through the website. Benefits
+        of cooperation When you sign a car rental agreement with us, you can
+        expect several advantages, including: 24/7 support and assistance in
+        selecting a car; the option for renting a car with an experienced driver
+        if needed; fast lease agreement signing with or without a security
+        deposit (with a minimum document package); prompt car delivery to the
+        specified location; technical assistance on the road in case of
+        breakdowns or other force majeure situations; affordable rental of GPS
+        navigators and child seats; confidentiality and transaction security;
+        reasonable service rates. Are you interested in affordable car rental
+        without a deposit, hassle-free processes, and inconveniences? Make a car
+        reservation with our company. We guarantee that by choosing CAR-RENT,
+        you will be satisfied with our extensive fleet, the vehicle's excellent
+        condition, our pricing, and the professional approach of our employees.
+        Daily and long-term car rental in Kryvyi Rih by "CAR-RENT" - Your smart
+        choice!
       </Text>
 
       <Button to={'/catalog'}>go to catalog</Button>
