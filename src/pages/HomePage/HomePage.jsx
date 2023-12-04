@@ -85,6 +85,8 @@ export default function Home() {
         `місто довжиною в життя`
         <br />
         `місто неперевершених вражень`
+        <br />
+        2023
       </TextKr>
     </Wrapper>
   );

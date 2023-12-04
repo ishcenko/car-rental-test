@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
-  background: linear-gradient(90deg, #9ad7ee, #f2f928);
+  background: linear-gradient(135deg, #9ad7ee, #f2f928);
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -50,8 +50,8 @@ export const Button = styled(Link)`
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  background: #3470ff;
-  color: #fff;
+  background: #032b88;
+  color: #f7efef;
   margin-top: 60px;
   margin-bottom: 60px;
   margin-left: auto;
@@ -71,7 +71,7 @@ export const Button = styled(Link)`
   }
 `;
 export const TextKr = styled.div`
-  color: red;
+  color: #1607bc;
   margin-bottom: 55px;
   text-align: center;
   font-size: 20px;
